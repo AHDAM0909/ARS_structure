@@ -16,14 +16,17 @@ const Stats = () => {
   // Detect when the Stats section enters the screen
   useEffect(() => {
     const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting) {
-          setStartCounting(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.3 }
-    );
+  (entries) => {
+    if (entries[0].isIntersecting) {
+      setStartCounting(true);
+      observer.disconnect();
+    }
+  },
+  {
+    threshold: 0,
+    rootMargin: "0px 0px -10% 0px",
+  }
+);
 
     if (sectionRef.current) {
       observer.observe(sectionRef.current);
