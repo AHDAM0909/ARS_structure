@@ -5,15 +5,28 @@ import Stats from './comoponents/Stats'
 import Projects from './comoponents/Projects';
 import About from './comoponents/About'
 import Services from './comoponents/Services'
+import ScrollReveal from './comoponents/Scrollreveal'
 function App() {
   return (
     <>
        <Navbar />
        <Hero />
        <Stats />
-       <Projects/>
-       <About />
-       <Services />
+         <ScrollReveal>
+        <Projects />
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <About />
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <Services />
+      </ScrollReveal>
+
+      {/* <ScrollReveal>
+        <Showcase />
+      </ScrollReveal> */}
     </>
   )
 }
