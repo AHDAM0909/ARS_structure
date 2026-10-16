@@ -1,49 +1,36 @@
 import { useState, useEffect, useRef } from "react";
-
+import { useInView } from "motion/react";
+const stats = [
+  { number: 30, suffix: "+", label: "Projects Completed" },
+  { number: 8, suffix: "+", label: "Years of Experience" },
+  { number: 15, suffix: "+", label: "Happy Clients" },
+  { number: 3, suffix: "", label: "Core Services" },
+];
 const Stats = () => {
-   const stats = [
-    { number: 30, suffix: "+", label: "Projects Completed" },
-    { number: 8, suffix: "+", label: "Years of Experience" },
-    { number: 15, suffix: "+", label: "Happy Clients" },
-    { number: 3, suffix: "", label: "Core Services" },
-  ];
-
-  const [counts, setCounts] = useState([0, 0, 0, 0]);
-  const [startCounting, setStartCounting] = useState(false);
+  
+const [counts, setCounts] = useState([0, 0, 0, 0]);
 
   const sectionRef = useRef(null);
 
-  // Detect when the Stats section enters the screen
+  // Check when the section becomes visible
+  const isInView = useInView(sectionRef, {
+    once: true,
+    amount: 0.1,
+  });
+
+  // Start counting when visible
   useEffect(() => {
-    const observer = new IntersectionObserver(
-  (entries) => {
-    if (entries[0].isIntersecting) {
-      setStartCounting(true);
-      observer.disconnect();
-    }
-  },
-  {
-    threshold: 0,
-    rootMargin: "0px 0px -10% 0px",
-  }
-);
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
-  // Animate the numbers
-  useEffect(() => {
-    if (!startCounting) return;
+    if (!isInView) return;
 
     const duration = 2000;
-    const startTime = performance.now();
     let animationId;
+    let startTime = null;
 
     function animate(currentTime) {
+      if (startTime === null) {
+        startTime = currentTime;
+      }
+
       const progress = Math.min(
         (currentTime - startTime) / duration,
         1
@@ -63,7 +50,7 @@ const Stats = () => {
     animationId = requestAnimationFrame(animate);
 
     return () => cancelAnimationFrame(animationId);
-  }, [startCounting]);
+  }, [isInView]);
 
   return (
     <section
@@ -71,6 +58,7 @@ const Stats = () => {
       className="bg-[#F5F2ED] px-5 py-10 md:px-10 lg:px-16"
     >
       <div className="mx-auto grid max-w-[1200px] grid-cols-2 md:grid-cols-4">
+
         {stats.map((stat, index) => (
           <div
             key={index}
@@ -86,8 +74,10 @@ const Stats = () => {
             </p>
           </div>
         ))}
+
       </div>
     </section>
+ 
   );
 }
 
