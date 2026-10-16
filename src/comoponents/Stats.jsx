@@ -8,49 +8,59 @@ const stats = [
 ];
 const Stats = () => {
   
-const [counts, setCounts] = useState([0, 0, 0, 0]);
-
+ const [counts, setCounts] = useState([0, 0, 0, 0]);
   const sectionRef = useRef(null);
 
-  // Check when the section becomes visible
-  const isInView = useInView(sectionRef, {
-    once: true,
-    amount: 0.1,
-  });
-
-  // Start counting when visible
   useEffect(() => {
-    if (!isInView) return;
+    const section = sectionRef.current;
 
-    const duration = 2000;
+    if (!section) return;
+
     let animationId;
-    let startTime = null;
+    let startTime;
+    let hasAnimated = false;
 
     function animate(currentTime) {
-      if (startTime === null) {
+      if (startTime === undefined) {
         startTime = currentTime;
       }
 
       const progress = Math.min(
-        (currentTime - startTime) / duration,
+        (currentTime - startTime) / 2000,
         1
       );
 
-      const updatedCounts = stats.map((stat) =>
+      const newCounts = stats.map((stat) =>
         Math.floor(stat.number * progress)
       );
 
-      setCounts(updatedCounts);
+      setCounts(newCounts);
 
       if (progress < 1) {
         animationId = requestAnimationFrame(animate);
       }
     }
 
-    animationId = requestAnimationFrame(animate);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && !hasAnimated) {
+          hasAnimated = true;
+          animationId = requestAnimationFrame(animate);
+          observer.disconnect();
+        }
+      },
+      {
+        threshold: 0,
+      }
+    );
 
-    return () => cancelAnimationFrame(animationId);
-  }, [isInView]);
+    observer.observe(section);
+
+    return () => {
+      observer.disconnect();
+      cancelAnimationFrame(animationId);
+    };
+  }, []);
 
   return (
     <section
@@ -58,10 +68,9 @@ const [counts, setCounts] = useState([0, 0, 0, 0]);
       className="bg-[#F5F2ED] px-5 py-10 md:px-10 lg:px-16"
     >
       <div className="mx-auto grid max-w-[1200px] grid-cols-2 md:grid-cols-4">
-
         {stats.map((stat, index) => (
           <div
-            key={index}
+            key={stat.label}
             className="border-r border-[#D5D0CA] px-4 py-4 last:border-r-0 md:px-6"
           >
             <h2 className="text-[36px] font-semibold leading-none text-[#171717] md:text-[48px]">
@@ -74,10 +83,8 @@ const [counts, setCounts] = useState([0, 0, 0, 0]);
             </p>
           </div>
         ))}
-
       </div>
     </section>
- 
   );
 }
 
