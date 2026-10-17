@@ -1,18 +1,20 @@
-import { useState } from 'react'
-import Navbar from './comoponents/Navbar'
-import Hero from './comoponents/Hero'
-import Stats from './comoponents/Stats'
-import Projects from './comoponents/Projects';
-import About from './comoponents/About'
-import Services from './comoponents/Services'
-import ScrollReveal from './comoponents/Scrollreveal'
+import React from 'react';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import Stats from './components/Stats';
+import Projects from './components/Projects';
+import About from './components/About';
+import Services from './components/Services';
+import ScrollReveal from './components/ScrollReveal';
+
 function App() {
   return (
     <>
-       <Navbar />
-       <Hero />
-       <Stats />
-         <ScrollReveal>
+      <Navbar />
+      <Hero />
+      <Stats />
+
+      <ScrollReveal>
         <Projects />
       </ScrollReveal>
 
@@ -23,12 +25,9 @@ function App() {
       <ScrollReveal>
         <Services />
       </ScrollReveal>
-
-      {/* <ScrollReveal>
-        <Showcase />
-      </ScrollReveal> */}
     </>
-  )
+  );
 }
 
-export default App
+export default App;
+       
