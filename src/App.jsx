@@ -6,6 +6,7 @@ import Projects from './components/Projects';
 import About from './components/About';
 import Services from './components/Services';
 import ScrollReveal from './components/ScrollReveal';
+import Showcase from './components/Showcase';
 
 function App() {
   return (
@@ -25,6 +26,10 @@ function App() {
       <ScrollReveal>
         <Services />
       </ScrollReveal>
+   
+    <ScrollReveal>
+      <Showcase />
+    </ScrollReveal>
     </>
   );
 }
