@@ -7,7 +7,10 @@ import About from './components/About';
 import Services from './components/Services';
 import ScrollReveal from './components/ScrollReveal';
 import Showcase from './components/Showcase';
-
+import Process from './components/Process';
+import CTA from './components/CTA';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
 function App() {
   return (
     <>
@@ -30,6 +33,10 @@ function App() {
     <ScrollReveal>
       <Showcase />
     </ScrollReveal>
+    <Process />
+    <CTA />
+   <Contact />
+   <Footer />
     </>
   );
 }
