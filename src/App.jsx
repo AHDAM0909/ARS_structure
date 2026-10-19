@@ -1,7 +1,10 @@
+import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
 import Home from "./pages/Home";
 import AboutPage from "./pages/AboutPage";
+import ServicesPage from "./pages/ServicesPage";
+import ProjectsPage from "./pages/ProjectsPage";
+import ContactPage from "./pages/ContactPage";
 
 function App() {
   return (
@@ -13,17 +16,17 @@ function App() {
         {/* Temporary routes */}
         <Route
           path="/projects"
-          element={<h1 className="p-10 text-3xl">Projects Page</h1>}
-        />
+          element={<ProjectsPage />} />
+      
 
         <Route
           path="/services"
-          element={<h1 className="p-10 text-3xl">Services Page</h1>}
+          element={<ServicesPage/>}
         />
 
         <Route
           path="/contact"
-          element={<h1 className="p-10 text-3xl">Contact Page</h1>}
+          element={<ContactPage />}
         />
       </Routes>
     </BrowserRouter>
