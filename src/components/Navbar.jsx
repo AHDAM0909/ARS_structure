@@ -25,7 +25,7 @@ const Navbar = () => {
           className="flex items-center gap-3"
         >
           <img
-            src="/images/logo.png"
+            src="/images/asclogo.jpeg"
             alt="ARS Structures Ltd Logo"
             className="h-9 w-9 object-contain"
           />
