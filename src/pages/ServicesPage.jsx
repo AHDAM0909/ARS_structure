@@ -10,7 +10,7 @@ const ServicesPage = () => {
     title: "Building Construction",
     description:
       "Construction of new buildings from foundation to finishes, delivered to the required design and specifications.",
-    image: "/images/01-building-construction.jpg",
+    image: "/images/multistorey.jpg",
     imagePosition: "left",
   },
   {
@@ -26,7 +26,7 @@ const ServicesPage = () => {
     title: "Design & Build",
     description:
       "A single point of accountability from early design conversations through to construction and handover.",
-    image: "/images/03-design-and-build.jpg",
+    image: "/images/about-hero.jpg",
     imagePosition: "left",
   },
   {
@@ -34,7 +34,7 @@ const ServicesPage = () => {
     title: "Renovation & Remodelling",
     description:
       "Upgrading, extending and reconfiguring existing buildings while protecting their character.",
-    image: "/images/04-renovation-and-remodelling.jpg",
+    image: "/images/residential.jpg",
     imagePosition: "right",
   },
   {
@@ -42,7 +42,7 @@ const ServicesPage = () => {
     title: "Interior Finishing",
     description:
       "Interior construction and finishes that carry the aesthetic intent of a building through to the last detail.",
-    image: "/images/05-interior-finishing.jpg",
+    image: "/images/interior.jpg",
     imagePosition: "left",
   },
   {
@@ -50,7 +50,7 @@ const ServicesPage = () => {
     title: "Project Management",
     description:
       "Organising, monitoring and coordinating building projects while protecting their outcomes.",
-    image: "/images/06-project-management.jpg",
+    image: "/images/residential.jpg",
     imagePosition: "right",
   },
 ];
