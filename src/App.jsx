@@ -5,7 +5,7 @@ import AboutPage from "./pages/AboutPage";
 import ServicesPage from "./pages/ServicesPage";
 import ProjectsPage from "./pages/ProjectsPage";
 import ContactPage from "./pages/ContactPage";
-
+import WhatsAppButton from "./components/WhatsAppButton";
 function App() {
   return (
     <BrowserRouter>
@@ -29,6 +29,7 @@ function App() {
           element={<ContactPage />}
         />
       </Routes>
+      <WhatsAppButton />
     </BrowserRouter>
   );
 }

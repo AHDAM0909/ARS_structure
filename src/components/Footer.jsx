@@ -50,14 +50,19 @@ const Footer = () => {
 
           {/* Brand and social links */}
           <div className="col-span-2 md:col-span-1">
-            <a
+            {/* <a
               href="#home"
               aria-label="ARS Structures home"
               className="inline-flex items-center gap-2"
-            >
-              <span className="flex h-9 w-9 items-center justify-center border border-[#2467A8] text-sm font-bold text-[#55A5EA]">
-                ARS
-              </span>
+            > */}{/* Company Logo */}
+<a href="/" className="inline-block">
+  <img
+    src="/images/asclogo.jpeg"
+    alt="ARS Structures Ltd Logo"
+    className="h-12 w-auto object-contain md:h-14"
+  />
+
+               
 
               <span className="text-[11px] font-semibold tracking-[0.12em]">
                 ARS STRUCTURES LTD
