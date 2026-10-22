@@ -6,6 +6,7 @@ import ServicesPage from "./pages/ServicesPage";
 import ProjectsPage from "./pages/ProjectsPage";
 import ContactPage from "./pages/ContactPage";
 import WhatsAppButton from "./components/WhatsAppButton";
+import ProjectDetailsPage from "./pages/ProjectDetailsPage";
 function App() {
   return (
     <BrowserRouter>
@@ -17,7 +18,10 @@ function App() {
         <Route
           path="/projects"
           element={<ProjectsPage />} />
-      
+           <Route
+    path="/projects/:id"
+    element={<ProjectDetailsPage />}
+  />
 
         <Route
           path="/services"

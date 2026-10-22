@@ -3,50 +3,51 @@ import { motion } from "motion/react";
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-const projects = [
-  {
-    id: 1,
-    title: "Commercial Office Building",
-    category: "Commercial",
-    status: "Completed",
-    image: "/images/commercial.jpg",
-  },
-  {
-    id: 2,
-    title: "Residential Duplex",
-    category: "Residential",
-    status: "Completed",
-    image: "/images/residential.jpg",
-  },
-  {
-    id: 3,
-    title: "Multi-Storey Residential Block",
-    category: "Residential",
-    status: "Ongoing",
-    image: "/images/multistorey.jpg",
-  },
-  {
-    id: 4,
-    title: "Institutional Building",
-    category: "Institutional",
-    status: "Completed",
-    image: "/images/institutional.jpg",
-  },
-  {
-    id: 5,
-    title: "Interior Fit-Out",
-    category: "Interiors",
-    status: "Completed",
-    image: "/images/interior.jpg",
-  },
-  {
-    id: 6,
-    title: "Mixed-Use Development",
-    category: "Mixed-Use",
-    status: "Ongoing",
-    image: "/images/mixedUse.jpg",
-  },
-];
+import projects from "../data/projects";
+// const projects = [
+//   {
+//     id: 1,
+//     title: "Commercial Office Building",
+//     category: "Commercial",
+//     status: "Completed",
+//     image: "/images/commercial.jpg",
+//   },
+//   {
+//     id: 2,
+//     title: "Residential Duplex",
+//     category: "Residential",
+//     status: "Completed",
+//     image: "/images/residential.jpg",
+//   },
+//   {
+//     id: 3,
+//     title: "Multi-Storey Residential Block",
+//     category: "Residential",
+//     status: "Ongoing",
+//     image: "/images/multistorey.jpg",
+//   },
+//   {
+//     id: 4,
+//     title: "Institutional Building",
+//     category: "Institutional",
+//     status: "Completed",
+//     image: "/images/institutional.jpg",
+//   },
+//   {
+//     id: 5,
+//     title: "Interior Fit-Out",
+//     category: "Interiors",
+//     status: "Completed",
+//     image: "/images/interior.jpg",
+//   },
+//   {
+//     id: 6,
+//     title: "Mixed-Use Development",
+//     category: "Mixed-Use",
+//     status: "Ongoing",
+//     image: "/images/mixedUse.jpg",
+//   },
+// ];
 const filters = [
   "All Projects",
   "Completed",
