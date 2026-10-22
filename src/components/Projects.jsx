@@ -1,6 +1,7 @@
 import React from 'react'
 import { motion } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
 const projects = [
    {
     id: 1,
@@ -115,9 +116,9 @@ const Projects = () => {
                   <div className="flex items-start justify-between gap-4">
 
                     <div>
-                      <p className="mb-2 text-[10px] text-[#377DB7]">
+                      <Link to="/projects" className="mb-2 inline-block text-[10px] text-[#377DB7]">
                         {project.category}
-                      </p>
+                      </Link>
 
                       <h3 className="text-[15px] font-semibold uppercase tracking-[0.01em] md:text-[17px]">
                         {project.title}
