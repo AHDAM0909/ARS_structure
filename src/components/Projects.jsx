@@ -3,8 +3,9 @@ import { motion } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
 const projects = [
-   {
+  {
     id: 1,
+    detailsId: 2, // Residential Duplex
     title: "RESIDENTIAL DEVELOPMENT",
     category: "Selected Work",
     description: "DESIGN AND BUILD",
@@ -13,6 +14,7 @@ const projects = [
   },
   {
     id: 2,
+    detailsId: 2, // Residential Duplex
     title: "RESIDENTIAL RENOVATION",
     category: "Selected Work",
     description: "DESIGN AND BUILD",
@@ -21,6 +23,7 @@ const projects = [
   },
   {
     id: 3,
+    detailsId: 2, // Residential Duplex
     title: "RESIDENTIAL RENOVATION",
     category: "Selected Work",
     description: "DESIGN AND BUILD",
@@ -29,6 +32,7 @@ const projects = [
   },
   {
     id: 4,
+    detailsId: 1, // Commercial Office Building
     title: "RESIDENTIAL DEVELOPMENT",
     category: "Selected Work",
     description: "DESIGN AND BUILD",
@@ -59,27 +63,38 @@ const Projects = () => {
 
         {/* Section Heading */}
         <div className="mb-14 grid gap-6 md:grid-cols-2 md:items-end">
-          <motion.div
-            initial={{ opacity: 0, y: 35 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.7 }}
-          >
-            <p className="mb-5 text-[10px] uppercase tracking-[0.2em] text-[#377DB7]">
-              01 / SELECTED WORK
-            </p>
+  <motion.div
+    initial={{ opacity: 0, y: 35 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, amount: 0.2 }}
+    transition={{ duration: 0.7 }}
+  >
+    <p className="mb-5 text-[10px] uppercase tracking-[0.2em] text-[#377DB7]">
+      01 / SELECTED WORK
+    </p>
 
-            <h2 className="text-[30px] font-semibold uppercase leading-[1.1] tracking-tight md:text-[42px] lg:text-[52px]">
-              BUILT WITH PURPOSE.
-              <br />
-              FINISHED WITH DETAIL.
-            </h2>
-          </motion.div>
-          <p className="max-w-[280px] text-[13px] leading-6 text-[#999999] md:justify-self-end">
-            A selection of spaces we've brought to life,
-            from structure to completion.
-          </p>
-        </div>
+    <h2 className="text-[30px] font-semibold uppercase leading-[1.1] tracking-tight md:text-[42px] lg:text-[52px]">
+      BUILT WITH PURPOSE.
+      <br />
+      FINISHED WITH DETAIL.
+    </h2>
+  </motion.div>
+
+  <div className="flex flex-col gap-5 md:items-end">
+    <p className="max-w-[280px] text-[13px] leading-6 text-[#999999]">
+      A selection of spaces we've brought to life,
+      from structure to completion.
+    </p>
+
+    <Link
+      to="/projects"
+      className="inline-flex items-center gap-3 border border-[#555555] px-5 py-3 text-[10px] font-medium tracking-[0.15em] text-white transition-colors duration-300 hover:border-[#377DB7] hover:bg-[#377DB7]"
+    >
+      VIEW ALL PROJECTS
+      <ArrowUpRight size={16} />
+    </Link>
+  </div>
+</div>
 
         {/* Asymmetric Project Grid */}
         <div className="grid grid-cols-1 gap-x-12 gap-y-16 md:grid-cols-12 md:gap-y-24">
@@ -102,6 +117,11 @@ const Projects = () => {
                 <div
                   className={`overflow-hidden bg-[#252525] ${imageSizes[project.layout]}`}
                 >
+                  <Link
+  to={`/projects/${project.detailsId}`}
+  aria-label={`View details for ${project.title}`}
+  className={`block overflow-hidden bg-[#252525] ${imageSizes[project.layout]}`}
+>
                   <motion.img
                     src={project.image}
                     alt={project.title}
@@ -110,13 +130,14 @@ const Projects = () => {
                     whileHover={{ scale: 1.06 }}
                     transition={{ duration: 0.6 }}
                   />
+                  </Link>
                 </div>
                  {/* Project Information */}
                 <div className="mt-5 border-t border-[#363636] pt-4">
                   <div className="flex items-start justify-between gap-4">
 
                     <div>
-                      <Link to="/projects" className="mb-2 inline-block text-[10px] text-[#377DB7]">
+                      <Link to={`/projects/${project.detailsId}`} className="mb-2 inline-block text-[10px] text-[#377DB7]">
                         {project.category}
                       </Link>
 
