@@ -201,7 +201,7 @@ const projects = [
     ],
 
     drawings: {
-      plan: "/images/interior-plan.jpg",
+      plan: "/images/family-plan.jpg",
       elevation: "/images/interior-elevation.jpg",
       section: "/images/interior-section.jpg",
     },
@@ -241,20 +241,170 @@ const projects = [
     ],
 
     drawings: {
-      plan: "/images/mixed-use-plan.jpg",
-      elevation: "/images/mixed-use-elevation.jpg",
-      section: "/images/mixed-use-section.jpg",
+      plan: "/images/family-plan.jpg",
+      elevation: "/images/family-elevation.jpg",
+      section: "/images/family-section.jpg",
     },
 
     photographs: [
       {
-        image: "/images/mixedUse.jpg",
-        caption: "Mixed-use development",
+        image: "/images/family.jpg",
+        caption: "Family home",
       },
     ],
 
     testimonial: null,
   },
+  {
+  id: 7,
+  title: "Residential Development",
+  category: "Residential",
+  status: "Completed",
+  image: "/images/targetedimg1.jpg",
+  location: "Lagos, Nigeria",
+  plotSize: "To be confirmed",
+  builtArea: "To be confirmed",
+  completed: "To be confirmed",
+  services: "Design and Build",
+
+  brief: [
+    "A residential development focused on creating practical and comfortable living spaces.",
+  ],
+
+  whatWeDid: [
+    "The project involved architectural planning, design development, and construction coordination.",
+  ],
+
+  result: [
+    "Further information about the project outcome will be added here.",
+  ],
+
+  drawings: {
+    plan: "/images/family-plan.jpg",
+  },
+
+  photographs: [
+    {
+      image: "/images/targetedimg1.jpg",
+      caption: "Residential development",
+    },
+  ],
+
+  testimonial: null,
+},
+{
+  id: 8,
+  title: "Residential Renovation",
+  category: "Residential",
+  status: "Completed",
+  image: "/images/project2image.jpg",
+  location: "Lagos, Nigeria",
+  plotSize: "To be confirmed",
+  builtArea: "To be confirmed",
+  completed: "To be confirmed",
+  services: "Design and Build",
+
+  brief: [
+    "A residential renovation project focused on improving the functionality and appearance of an existing property.",
+  ],
+
+  whatWeDid: [
+    "The project involved renovation planning and coordination of improvement works.",
+  ],
+
+  result: [
+    "Further information about the completed renovation will be added here.",
+  ],
+
+  drawings: {
+    plan: "/images/family-plan.jpg",
+  },
+
+  photographs: [
+    {
+      image: "/images/project2image.jpg",
+      caption: "Residential renovation",
+    },
+  ],
+
+  testimonial: null,
+},
+{
+  id: 9,
+  title: "Residential Renovation",
+  category: "Residential",
+  status: "Completed",
+  image: "/images/project3image.jpg",
+  location: "Lagos, Nigeria",
+  plotSize: "To be confirmed",
+  builtArea: "To be confirmed",
+  completed: "To be confirmed",
+  services: "Design and Build",
+
+  brief: [
+    "A residential renovation project focused on updating an existing building.",
+  ],
+
+  whatWeDid: [
+    "The project involved planning and coordination of renovation activities.",
+  ],
+
+  result: [
+    "Further information about the project outcome will be added here.",
+  ],
+
+  drawings: {
+    plan: "/images/family-plan.jpg",
+    elevation: "/images/family-elevation.jpg",
+    section: "/images/family-section.jpg",
+  },
+
+  photographs: [
+    {
+      image: "/images/project3image.jpg",
+      caption: "Residential renovation",
+    },
+  ],
+
+  testimonial: null,
+},
+{
+  id: 10,
+  title: "Residential Development",
+  category: "Residential",
+  status: "Completed",
+  image: "/images/project4image.jpg",
+  location: "Lagos, Nigeria",
+  plotSize: "To be confirmed",
+  builtArea: "To be confirmed",
+  completed: "To be confirmed",
+  services: "Design and Build",
+
+  brief: [
+    "A residential development project focused on practical planning and contemporary architectural design.",
+  ],
+
+  whatWeDid: [
+    "The project involved design development and construction coordination.",
+  ],
+
+  result: [
+    "Further information about the project outcome will be added here.",
+  ],
+
+  drawings: {
+    plan: "/images/family-plan.jpg",
+  },
+
+  photographs: [
+    {
+      image: "/images/project4image.jpg",
+      caption: "Residential development",
+    },
+  ],
+
+  testimonial: null,
+},
 ];
 
 export default projects;

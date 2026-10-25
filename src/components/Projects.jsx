@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const projects = [
   {
     id: 1,
-    detailsId: 2, // Residential Duplex
+    detailsId: 7,
     title: "RESIDENTIAL DEVELOPMENT",
     category: "Selected Work",
     description: "DESIGN AND BUILD",
@@ -14,7 +14,7 @@ const projects = [
   },
   {
     id: 2,
-    detailsId: 2, // Residential Duplex
+    detailsId: 8,
     title: "RESIDENTIAL RENOVATION",
     category: "Selected Work",
     description: "DESIGN AND BUILD",
@@ -23,7 +23,7 @@ const projects = [
   },
   {
     id: 3,
-    detailsId: 2, // Residential Duplex
+    detailsId: 9,
     title: "RESIDENTIAL RENOVATION",
     category: "Selected Work",
     description: "DESIGN AND BUILD",
@@ -32,7 +32,7 @@ const projects = [
   },
   {
     id: 4,
-    detailsId: 1, // Commercial Office Building
+    detailsId: 10,
     title: "RESIDENTIAL DEVELOPMENT",
     category: "Selected Work",
     description: "DESIGN AND BUILD",
@@ -80,7 +80,7 @@ const Projects = () => {
     </h2>
   </motion.div>
 
-  <div className="flex flex-col gap-5 md:items-end">
+  <div className="flex flex-col items-start gap-5 md:items-end">
     <p className="max-w-[280px] text-[13px] leading-6 text-[#999999]">
       A selection of spaces we've brought to life,
       from structure to completion.
@@ -88,7 +88,7 @@ const Projects = () => {
 
     <Link
       to="/projects"
-      className="inline-flex items-center gap-3 border border-[#555555] px-5 py-3 text-[10px] font-medium tracking-[0.15em] text-white transition-colors duration-300 hover:border-[#377DB7] hover:bg-[#377DB7]"
+      className="inline-flex w-fit self-start items-center gap-3 border border-[#555555] px-5 py-3 text-[10px] font-medium tracking-[0.15em] text-white transition-colors duration-300 hover:border-[#377DB7] hover:bg-[#377DB7] md:self-end"
     >
       VIEW ALL PROJECTS
       <ArrowUpRight size={16} />
